@@ -1,6 +1,8 @@
 <?php
 
 namespace App\Http\Controllers;
+use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Str;
 /*
 use Illuminate\Support\Facades\Storage;
 
@@ -26,8 +28,7 @@ class ArchivoController extends Controller
 }*/
 
 
-use Illuminate\Support\Facades\Storage;
-use Illuminate\Support\Str;
+
 
 class ArchivoController extends Controller
 {
@@ -78,4 +79,6 @@ class ArchivoController extends Controller
             'rutaCulturalesEvidencias'
         ));
     }
+
+
 }

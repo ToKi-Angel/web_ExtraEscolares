@@ -37,7 +37,7 @@
         history.pushState(null, null, location.href);
 
         // Escuchar el evento "popstate" para detectar cuando el usuario intenta regresar
-        window.addEventListener('popstate', function () {
+        window.addEventListener('popstate', function() {
             // Navegar hacia la página que deseas cuando el usuario intenta regresar
             window.location.href = '/inicio';
         });

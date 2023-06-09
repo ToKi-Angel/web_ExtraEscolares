@@ -5,7 +5,10 @@ use App\Http\Controllers\ArchivoController;
 use App\Http\Controllers\AuthController;
 use Illuminate\Support\Facades\Route;
 
+
 Route::get('/archivos/{matricula}', [ArchivoController::class, 'mostrarArchivos'])->name('archivos');
+
+
 
 Route::get('/', [AuthController::class, 'login'])->name('auth-login');
 Route::post('/logear', [AuthController::class, 'logear'])->name('logear');
