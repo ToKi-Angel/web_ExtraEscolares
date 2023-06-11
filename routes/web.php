@@ -5,8 +5,18 @@ use App\Http\Controllers\ArchivoController;
 use App\Http\Controllers\AuthController;
 use Illuminate\Support\Facades\Route;
 
-
 Route::get('/archivos/{matricula}', [ArchivoController::class, 'mostrarArchivos'])->name('archivos');
+
+Route::post('/eliminar-archivo', [ArchivoController::class, 'eliminarArchivo'])->name('eliminar-archivo');
+
+Route::get('/generar-comprobante/{id}', [ArchivoController::class, 'generarComprobante'])->name('generar-comprobante');
+
+Route::get('/formulario-evento/{id}', [ArchivoController::class, 'formularioEvento'])->name('formulario-evento');
+Route::post('/generar-pdf-evento', [ArchivoController::class, 'generarPdfEvento'])->name('generar-pdf-evento');
+
+Route::get('/constancia-deportiva/{id}', [ArchivoController::class, 'PdfConstanciaDeportiva'])->name('constancia-deportiva');
+Route::get('/constancia-cultural/{id}', [ArchivoController::class, 'PdfConstanciaCultural'])->name('constancia-cultural');
+Route::get('/constancia-civica/{id}', [ArchivoController::class, 'PdfConstanciaCivica'])->name('constancia-civica');
 
 
 

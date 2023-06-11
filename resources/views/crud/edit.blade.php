@@ -1,8 +1,22 @@
 @extends('layouts/main')
 @section('contenido')
-    <form class="row g-3 fs-4" action="{{ route('update', $items->id) }}" method="post">
+    <form class="row g-3 fs-4" action="{{ route('update', $items->id) }}" method="post" enctype="multipart/form-data">
 
         <p class="fs-2 text-center">Editando al alumn@ {{ $items->nombre }}</p>
+        @if ($errors->any())
+        <div class="alert alert-danger">
+            <ul>
+                @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        </div>
+        <script>
+            setTimeout(function() {
+                $('.alert-danger').fadeOut('slow');
+            }, 5000);
+        </script>
+    @endif
 
         @csrf
         @method('PUT')
@@ -63,13 +77,13 @@
 
 
         <div class="form-check">
-            <input class="form-check-input" type="checkbox" id="mostrarArchivos" name="mostrarArchivos">
+            <input class="form-check-input" type="checkbox" id="mostrarArchivos" name="mostrarArchivos" checked>
             <label class="form-check-label" for="mostrarArchivos">
                 Añadir horas y archivos
             </label>
         </div>
 
-        <div class="row" id="archivos" style="display: none;">
+        <div class="row" id="archivos" style="display: change;">
             <!-- Parte del formulario donde van los archivos  -->
             <div class="row" id="archivos">
                 <div class="col">
@@ -82,15 +96,15 @@
                         <div class="col-3 text-center">
                             <label for="archivosCivicos" class="form-label">MOOC</label>
                             <input type="file" id="archivosCivicos" name="archivosCivicos[]" multiple
-                                class="form-control">
+                                class="form-control" accept=".pdf">
                         </div>
                         <div class="col-3 text-center">
                             <label for="archivosEvidenciasCivicos" class="form-label">Evidencias</label>
                             <input type="file" id="archivosEvidenciasCivicos" name="archivosEvidenciasCivicos[]"
-                                multiple class="form-control">
+                                multiple class="form-control" accept=".pdf">
                         </div>
                         <div class="col-3">
-                            <label for="descripcionCivica" class="form-label">Descripción</label>
+                            <label for="descripcionCivica" class="form-label">Ubicación Física de los archivos</label>
                             <textarea class="form-control" name="descripcionCivica" id="descripcionCivica" rows="1">{{ $items->descripcionCivica }}</textarea>
                         </div>
                     </div>
@@ -103,15 +117,15 @@
                         <div class="col-3 text-center">
                             <label for="archivosDeportivos" class="form-label">MOOC</label>
                             <input type="file" id="archivosDeportivos" name="archivosDeportivos[]" multiple
-                                class="form-control">
+                                class="form-control" accept=".pdf">
                         </div>
                         <div class="col-3 text-center">
                             <label for="archivosEvidenciasDeportivas" class="form-label">Evidencias</label>
                             <input type="file" id="archivosEvidenciasDeportivas" name="archivosEvidenciasDeportivas[]"
-                                multiple class="form-control">
+                                multiple class="form-control" accept=".pdf">
                         </div>
                         <div class="col-3">
-                            <label for="descripcionDeportiva" class="form-label">Descripción</label>
+                            <label for="descripcionDeportiva" class="form-label">Ubicación Física de los archivos</label>
                             <textarea class="form-control" name="descripcionDeportiva" id="descripcionDeportiva" rows="1">{{ $items->descripcionDeportiva }}</textarea>
                         </div>
                     </div>
@@ -124,15 +138,15 @@
                         <div class="col-3 text-center">
                             <label for="archivosCulturales" class="form-label">MOOC</label>
                             <input type="file" id="archivosCulturales" name="archivosCulturales[]" multiple
-                                class="form-control">
+                                class="form-control" accept=".pdf">
                         </div>
                         <div class="col-3 text-center">
                             <label for="archivosEvidenciasCulturales" class="form-label">Evidencias</label>
                             <input type="file" id="archivosEvidenciasCulturales" name="archivosEvidenciasCulturales[]"
-                                multiple class="form-control">
+                                multiple class="form-control" accept=".pdf">
                         </div>
                         <div class="col-3">
-                            <label for="descripcionCultural" class="form-label">Descripción</label>
+                            <label for="descripcionCultural" class="form-label">Ubicación Física de los archivos</label>
                             <textarea class="form-control" name="descripcionCultural" id="descripcionCultural" rows="1">{{ $items->descripcionCultural }}</textarea>
                         </div>
                     </div>
@@ -147,18 +161,26 @@
 
             // Manejar el evento de cambio del checkbox
             checkbox.addEventListener('change', function() {
-                if (this.checked) {
-                    archivosDiv.style.display = 'block'; // Mostrar el div
-                    document.getElementById('horaCivica').required = true; // Establecer campo como requerido
-                    document.getElementById('horaDeportiva').required = true; // Establecer campo como requerido
-                    document.getElementById('horaCultural').required = true; // Establecer campo como requerido
-                } else {
-                    archivosDiv.style.display = 'none'; // Ocultar el div
-                    document.getElementById('horaCivica').required = false; // Eliminar requisito de campo
-                    document.getElementById('horaDeportiva').required = false; // Eliminar requisito de campo
-                    document.getElementById('horaCultural').required = false; // Eliminar requisito de campo
-                }
-            });
+                    if (this.checked) {
+                        archivosDiv.style.display = 'block'; // Mostrar el div
+                        // Establecer campo como requerido
+                        document.getElementById('horaCivica').required = true;
+                        document.getElementById('descripcionCivica').required = true;
+                        document.getElementById('horaDeportiva').required = true;
+                        document.getElementById('descripcionDeportiva').required = true;
+                        document.getElementById('horaCultural').required = true;
+                        document.getElementById('descripcionCultural').required = true;
+                    } else {
+                        archivosDiv.style.display = 'none'; // Ocultar el div
+                        // Eliminar requisito de campo
+                        document.getElementById('horaCivica').required = false;
+                        document.getElementById('descripcionCivica').required = false;
+                        document.getElementById('horaDeportiva').required = false;
+                        document.getElementById('descripcionDeportiva').required = false;
+                        document.getElementById('horaCultural').required = false;
+                        document.getElementById('descripcionCultural').required = false;
+                    }
+                });
         </script>
 
         <div class="row">

@@ -13,13 +13,13 @@
                         <th>Apellido Materno</th>
                         <th>Carrera</th>
                         <th>Hrs Cívicas</th>
-                        <th>Descripción Cívica</th>
+                        <th>Ubicación Real</th>
                         <th>Hrs Deportivas</th>
-                        <th>Descripción Deportiva</th>
+                        <th>Ubicación Real</th>
                         <th>Hrs Culturales</th>
-                        <th>Descripción Cultural</th>
+                        <th>Ubicación Real</th>
                         <th>Teléfono</th>
-                        <th>Fecha</th>
+                        <th>Fecha de nacimineto</th>
                         <th>Fecha de Ingreso</th>
                         <th>Archivos</th>
                         <th>Editar</th>
@@ -34,12 +34,12 @@
                             <td>{{ $item->paterno }}</td>
                             <td>{{ $item->materno }}</td>
                             <td>{{ $item->tipo }}</td>
-                            <td>{{ $item->horaCivica }}</td>
-                            <td>{{ $item->descripcionCivica }}</td>
-                            <td>{{ $item->horaDeportiva }}</td>
-                            <td>{{ $item->descripcionDeportiva }}</td>
-                            <td>{{ $item->horaCultural }}</td>
-                            <td>{{ $item->descripcionCultural }}</td>
+                            <td>{{ $item->horaCivica != '' ? $item->horaCivica : '0' }}</td>
+                            <td>{{ $item->descripcionCivica != '' ? $item->descripcionCivica : 'No hay descripción provista' }}</td>
+                            <td>{{ $item->horaDeportiva != '' ? $item->horaDeportiva : '0' }}</td>
+                            <td>{{ $item->descripcionDeportiva != '' ? $item->descripcionDeportiva : 'No hay descripción provista' }}</td>
+                            <td>{{ $item->horaCultural != '' ? $item->horaCultural : '0' }}</td>
+                            <td>{{ $item->descripcionCultural != '' ? $item->descripcionCultural : 'No hay descripción provista' }}</td>
                             <td>{{ $item->telefono }}</td>
                             <td>{{ $item->fecha }}</td>
                             <td>{{ $item->fechaIngreso }}</td>

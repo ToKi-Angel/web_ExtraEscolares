@@ -14,6 +14,7 @@
     <link rel="stylesheet" type="text/css"
         href="https://cdn.datatables.net/responsive/2.2.9/css/responsive.dataTables.css">
     <script type="text/javascript" src="https://cdn.datatables.net/responsive/2.2.9/js/dataTables.responsive.js"></script>
+    <meta name="csrf-token" content="{{ csrf_token() }}">
 
 
     <title>{{ $titulo }}</title>

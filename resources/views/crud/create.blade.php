@@ -65,7 +65,7 @@
                 <div class="col-3">
                     <label for="tipo" class="form-label">Carrera</label>
                     <select name="tipo" id="tipo" class="form-select" required>
-                        @foreach (['SIS', 'GES', 'IND'] as $tipo)
+                        @foreach (['Ing. en Sistemas Computacionales', 'Ing. Destión Empresarial', 'Ing. industrial'] as $tipo)
                             <option value="{{ $tipo }}">{{ $tipo }}</option>
                         @endforeach
                     </select>
