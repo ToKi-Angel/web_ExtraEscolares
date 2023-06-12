@@ -87,7 +87,7 @@ class AltasBajas extends Controller
         $matricula = $request->id;
         $carpetaAlumno = public_path('Alumnos/' . $matricula);
         if (!file_exists($carpetaAlumno)) {
-            mkdir($carpetaAlumno, 0755, true);
+            mkdir($carpetaAlumno, 0777, true);
         }
 
         // Crear carpetas adicionales dentro de la carpeta de la matrícula
@@ -96,15 +96,15 @@ class AltasBajas extends Controller
         $carpetaHorasCulturales = $carpetaAlumno . '/HorasCulturales';
 
         if (!file_exists($carpetaHorasCivicas)) {
-            mkdir($carpetaHorasCivicas, 0755, true);
+            mkdir($carpetaHorasCivicas, 0777, true);
         }
 
         if (!file_exists($carpetaHorasDeportivas)) {
-            mkdir($carpetaHorasDeportivas, 0755, true);
+            mkdir($carpetaHorasDeportivas, 0777, true);
         }
 
         if (!file_exists($carpetaHorasCulturales)) {
-            mkdir($carpetaHorasCulturales, 0755, true);
+            mkdir($carpetaHorasCulturales, 0777, true);
         }
 
         // Mover archivos subidos a la carpeta MOOC de Horas Cívicas
