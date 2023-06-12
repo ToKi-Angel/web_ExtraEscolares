@@ -27,6 +27,19 @@
         .odd {
             background: #fefcf9;
         }
+
+        .logoTECNM {
+            width: 200px;
+            height: 72px;
+        }
+
+        .logoMA {
+            width: 72px;
+            height: 72px;
+        }.logoVerde {
+        width: 65px;
+        height: 72px;
+    }
     </style>
 </head>
 
@@ -35,7 +48,9 @@
         <tbody>
             <tr>
                 <td rowspan="3"
-                    style="text-align: left; font-weight: bold; font-size: 12px; width: 120px; height:70px;">1</td>
+                    style="text-align: center; vertical-align: middle; font-weight: bold; font-size: 12px; width: 120px; height:70px;"><img
+                        src="https://www.tecnm.mx/images/dir_calidad/re/logo_calidad.jpg" alt="logo"
+                        class="logoVerde ml-5"></td>
                 <td rowspan="2" style="text-align: left; font-weight: bold; font-size: 12px; width: 430px;">Constancia
                     de cumplimiento de actividad cívica</td>
                 <td style="text-align: left; font-weight: bold; font-size: 12px; width: 165px;">Código:TecNM-VI-PO-003-05
@@ -87,18 +102,22 @@
             <div class="row">
                 <div class="col">
                     <table style="width: 100%">
-                        <tbody >
+                        <tbody>
                             <tr>
                                 <td style="border: 1px solid #ffffff; vertical-align: middle;">
-                                    <p style="text-align: center; font-size: 12px;">_________________________________</p><br>
-                                    <p style="text-align: center; font-size: 10px; font-family:'Times New Roman'">ING. AQUINO SEGURA ROLDAN <br>
+                                    <p style="text-align: center; font-size: 12px;">_________________________________
+                                    </p><br>
+                                    <p style="text-align: center; font-size: 10px; font-family:'Times New Roman'">ING.
+                                        AQUINO SEGURA ROLDAN <br>
                                         Nombre y firma del (de la) profesor(a)
                                         <br> respnsable
                                     </p>
                                 </td>
                                 <td style="border: 1px solid #ffffff; vertical-align: middle;">
-                                    <p style="text-align: center; font-size: 12px;">_________________________________</p><br>
-                                    <p style="text-align: center; font-size: 10px; font-family:'Times New Roman';">ING. AQUINO SEGURA ROLDAN <br>
+                                    <p style="text-align: center; font-size: 12px;">_________________________________
+                                    </p><br>
+                                    <p style="text-align: center; font-size: 10px; font-family:'Times New Roman';">ING.
+                                        AQUINO SEGURA ROLDAN <br>
                                         Jefe(a) del Depto. de Actividades <br> Extraescolares
                                     </p>
                                 </td>
