@@ -1,13 +1,13 @@
 <ul class="nav d-flex mt-2 justify-content-between">
     <li></li>
     <li class="nav-item">
-        <a class="nav-link active" aria-current="page" href="/">Inicio</a>
+        <a class="btn btn-light active" aria-current="page" href="/">Inicio</a>
     </li>
     <li class="nav-item">
-        <a class="nav-link" href="/crud/create">Agregar alumno nuevo</a>
+        <a class="btn btn-light" href="/crud/create">Agregar alumno nuevo</a>
     </li>
     <li class="nav-item">
-        <a class="nav-link" href="/crud/tabla">Alumnos a detalle</a>
+        <a class="btn btn-light" href="/crud/tabla">Alumnos a detalle</a>
     </li>
     <li></li>
     <li></li>

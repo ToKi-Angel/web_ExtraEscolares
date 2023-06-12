@@ -14,12 +14,68 @@
     <link rel="stylesheet" type="text/css"
         href="https://cdn.datatables.net/responsive/2.2.9/css/responsive.dataTables.css">
     <script type="text/javascript" src="https://cdn.datatables.net/responsive/2.2.9/js/dataTables.responsive.js"></script>
-<style>
-    .transparent-input {
-        background-color: rgba(0, 0, 0, 0) !important;
-        border: none !important;
-    }
-</style>
+    <style>
+        [class*="btn"] {
+            display: inline-block;
+            padding: 10px 20px;
+            font-size: 16px;
+            font-weight: bold;
+            text-align: center;
+            text-decoration: none;
+            color: #ffffff;
+            background-color: #337ab7;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        [class*="btn"]:hover {
+            background-color: #23527c;
+            background-image: url("https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExNTgzY2UyNzFhMmJjNjhhYTU2ZjFmOWY3OTRmMzc3Yjg4OGI4MTdjYSZlcD12MV9pbnRlcm5hbF9naWZzX2dpZklkJmN0PWc/IAb717kg5jMkMhNofp/giphy.gif");
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-size: cover;
+        }
+
+        .card {
+            background-color: rgba(131, 239, 199, 0.509);
+            text-decoration-color: white;
+            text-emphasis-color: white;
+            color: white;
+        }
+
+        body {
+            position: relative;
+            min-height: 100vh;
+            margin: 0;
+            padding: 0;
+        }
+
+        body:before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url("https://wallpapercave.com/wp/wp4809813.jpg");
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-attachment: fixed;
+            background-size: cover;
+            filter: blur(5px);
+            z-index: -1;
+        }
+
+        .content {
+            position: relative;
+            z-index: 1;
+            color: #ffffff;
+            text-align: center;
+        }
+    </style>
+
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
 
