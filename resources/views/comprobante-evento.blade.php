@@ -12,23 +12,13 @@
             border-collapse: collapse;
         }
 
-        td,
-        th {
-            padding: 3px;
-            width: 30px;
-            height: 25px;
+        .logoTECNM {
+            width: 200px;
+            height: 72px;
         }
-
-        th {
-            background: #f0e6cc;
-        }
-
-        .even {
-            background: #fbf8f0;
-        }
-
-        .odd {
-            background: #fefcf9;
+        .logoMA {
+            width: 72px;
+            height: 72px;
         }
     </style>
 </head>
@@ -42,11 +32,15 @@
                     <tbody>
                         <tr>
                             <td rowspan="2">
-                                <img src="{{ public_path('/img/tecnm.png') }}" alt="">
+                                <img src="https://www.tecnm.mx/assets/files/main/img/pleca_tecnm.jpg?img=28"
+                                    alt=""
+                                    style="text-align: center; vertical-align: middle; bold; font-size: 12px;"
+                                    class="logoTECNM">
                             </td>
                             <td colspan="2" style="text-align: center; font-weight: bold; font-size: 20px;">Instituto
-                                Tecnológico de Milpa Alta II</td>
-                            <td rowspan="2">2</td>
+                                Tecnológico de Milpa Alta II</td><td rowspan="2" style="text-align: center;">
+                                    <img src="https://milpaalta2.tecnm.mx/img/itma2.webp" alt="" class="logoMA">
+                                  </td>
                         </tr>
                         <tr>
                             <td colspan="2" style="text-align: center; font-weight: bold; font-size: 15px;">
@@ -75,7 +69,8 @@
                         </tr>
                         <tr>
                             <td colspan="2" style="text-align: center;">Horas Acreditadas</td>
-                            <td colspan="2" style="text-align: center;">{{ $horas }} horas de tipo {{ $tipoCredito }}</td>
+                            <td colspan="2" style="text-align: center;">{{ $horas }} horas de tipo
+                                {{ $tipoCredito }}</td>
                         </tr>
                     </tbody>
                 </table>

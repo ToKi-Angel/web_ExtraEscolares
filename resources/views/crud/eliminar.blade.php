@@ -7,9 +7,10 @@
                 <ul>
                     <li>Con la matricula: {{ $items->id }}</li>
                     <li>De la carrera: {{ $items->tipo }}</li>
-                    <li>Hasta ahora lleva {{ $items->horaCivica }} horas civicas</li>
-                    <li>De la carrera: {{ $items->tipo }}</li>
-                    <li>De la carrera: {{ $items->tipo }}</li>
+                    <li>{{ $items->horaCivica > 0 ? 'Lleva ' . $items->horaCivica . ' horas cívicas' : 'No tiene horas cívicas.' }}</li>
+                    <li>{{ $items->horaDeportivaa > 0 ? 'Lleva ' . $items->horaDeportivaa . ' horas deportivas' : 'No tiene horas deportivas.' }}</li>
+                    <li>{{ $items->horaCultural > 0 ? 'Lleva ' . $items->horaCultural . ' horas culturales' : 'No tiene horas culturales' }}</li>
+                    <li>Esta acion no se puede deshacer!!</li>
                 </ul>
                 <form action="{{ route('destroy', $items->id)}}" method="post">
                     @csrf

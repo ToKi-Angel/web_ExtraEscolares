@@ -28,7 +28,10 @@
         }
         .info span {
             font-weight: bold;
-        }
+        }.logoVerde {
+        width: 65px;
+        height: 72px;
+    }
     </style>
 </head>
 
@@ -37,7 +40,7 @@
         <tbody>
             <tr>
                 <td rowspan="3"
-                    style="text-align: left; font-weight: bold; font-size: 12px; width: 120px; height:70px;">1</td>
+                style="text-align: center; vertical-align: middle; bold; font-size: 12px; width: 120px; height:70px;"><img src="https://www.tecnm.mx/images/dir_calidad/re/logo_calidad.jpg" alt="logo" class="logoVerde ml-5"></td>
                 <td rowspan="2" style="text-align: left; font-weight: bold; font-size: 12px; width: 430px;">Constancia
                     de cumplimiento de actividad deportiva</td>
                 <td style="text-align: left; font-weight: bold; font-size: 12px; width: 165px;">Código:TecNM-VI-PO-003-05
@@ -64,7 +67,7 @@
     <p style="text-align: justify; font-size: 16px;">Horas cívicas: {{ $item->horaCivica }}</p>
     <p style="text-align: justify; font-size: 16px;">Horas culturales: {{ $item->horaCultural }}</p>
 
-    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
     <p style="text-align: justify; font-size: 12px;">
         <b>Nota:</b> Este documento no sirve como comprobante o evidencia de ningun crédito.
         <br>

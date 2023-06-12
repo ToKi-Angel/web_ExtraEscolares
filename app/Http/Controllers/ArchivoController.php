@@ -173,7 +173,7 @@ class ArchivoController extends Controller
         $pdf->loadHtml(View::make('comprobante-evento', ['alumnoId' => $alumnoId, 'evento' => $evento, 'horas' => $horas, 'tipoCredito' => $tipoCredito, 'nombre' => $nombreAlumno, 'fecha' => $fechaActual, 'carrera' => $carrera])->render());
 
         $pdf->render();
-        //return view('comprobante-evento', ['alumnoId' => $alumnoId, 'evento' => $evento, 'horas' => $horas, 'tipoCredito' => $tipoCredito]);
+        //return view('comprobante-evento', ['alumnoId' => $alumnoId, 'evento' => $evento, 'horas' => $horas, 'tipoCredito' => $tipoCredito, 'nombre' => $nombreAlumno, 'fecha' => $fechaActual, 'carrera' => $carrera]);
 
         // Generar el PDF
         $pdf->stream('comprobante.pdf');

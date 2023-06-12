@@ -42,6 +42,7 @@ class AltasBajas extends Controller
     {
         ini_set('post_max_size', '16M');
         $request->validate([
+            'id' => 'required|integer|unique:ingreso|gt:0',
             'archivosEvidenciasCivicos.*' => 'nullable|mimes:pdf',
             'archivosEvidenciasDeportivas.*' => 'nullable|mimes:pdf',
             'archivosEvidenciasCulturales.*' => 'nullable|mimes:pdf',
@@ -49,6 +50,10 @@ class AltasBajas extends Controller
             'archivosDeportivos.*' => 'nullable|mimes:pdf',
             'archivosCulturales.*' => 'nullable|mimes:pdf',
         ], [
+                'id.required' => 'El campo ID es requerido',
+                'id.integer' => 'El campo ID debe ser un número entero',
+                'id.unique' => 'Esta matricula ya existe. Verifica tus datos :/',
+                'id.gt' => 'No hay matriculas negativas ni que sean 0 :/',
                 'archivosEvidenciasCivicos.*.mimes' => 'Los archivos de evidencias de horas cívicas deben ser en formato PDF',
                 'archivosEvidenciasDeportivas.*.mimes' => 'Los archivos de evidencias de horas deportivas deben ser en formato PDF',
                 'archivosEvidenciasCulturales.*.mimes' => 'Los archivos de evidencias de horas culturales deben ser en formato PDF',
